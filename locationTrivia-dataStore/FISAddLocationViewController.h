@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FISLocationsDataManager.h"
+#import "FISLocation.h"
+#import "FISTrivia.h"
+#import "FISLocationsTableViewController.h"
 
 @interface FISAddLocationViewController : UIViewController
 

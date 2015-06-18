@@ -74,7 +74,7 @@ This next lab already has these steps set up for you. Take a moment to look over
 
   **No tests for this one**
 
-  1. Add a new `UIViewController` for creating `FISLocation` objects called `FISAddLocationViewController`. Segue to this new view controller from the `UIBarButtonItem` with style 'Add' (the plus sign) on the `FISLocationsTableViewController`
+  1. Add a new `UIViewController` for creating `FISLocation` objects called `FISAddLocationViewController`. Segue to this new view controller from the `UIBarButtonItem` with style 'Add' (the      plus sign) on the `FISLocationsTableViewController`
   1. Add three `UITextField`s to the new `FISAddLocationViewController` for setting the Name, Latitude, and Longitude properties on the `FISLocation` object to be created.
   1. Add a `UIBarButtonItem` with style 'Save' to the `FISAddLocationViewController` which:
   	- creates a `FISLocation` object with the data in the text fields, 

@@ -9,29 +9,36 @@
 #import "FISAddLocationViewController.h"
 
 @interface FISAddLocationViewController ()
-
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *latitudeTextField;
+@property (weak, nonatomic) IBOutlet UITextField *longitudeTextField;
+@property (nonatomic, strong) FISLocationsDataManager *dataManager;
 @end
 
 @implementation FISAddLocationViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.dataManager = [FISLocationsDataManager sharedLocationsDataManager];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)saveButtonPressed:(id)sender {
+    
+    FISLocation *coolNewLocation = [[FISLocation alloc] init];
 
-/*
-#pragma mark - Navigation
+    coolNewLocation.name = self.nameTextField.text;
+    coolNewLocation.latitude = @([self.latitudeTextField.text integerValue]);
+    coolNewLocation.longitude = @([self.longitudeTextField.text integerValue]);
+    [self.dataManager.locations addObject:coolNewLocation];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
+
+
 
 @end

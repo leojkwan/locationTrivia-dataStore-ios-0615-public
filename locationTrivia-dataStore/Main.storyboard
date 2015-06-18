@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" id="18V-W7-rat">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PuT-mE-U89">
                             <connections>
-                                <segue destination="k2G-9j-foM" kind="push" id="Sxb-QD-5bq"/>
+                                <segue destination="k2G-9j-foM" kind="push" identifier="addLocationSegue" id="Sxb-QD-5bq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -109,13 +109,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJM-rB-kaP">
-                                <rect key="frame" x="16" y="223" width="281" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-s8-k7e">
+                                <rect key="frame" x="16" y="136" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZX-W5-LwC">
-                                <rect key="frame" x="16" y="308" width="281" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bJM-rB-kaP">
+                                <rect key="frame" x="16" y="223" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -137,8 +137,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lui-s8-k7e">
-                                <rect key="frame" x="16" y="136" width="281" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nZX-W5-LwC">
+                                <rect key="frame" x="16" y="308" width="281" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -146,8 +146,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Location" id="tPu-Rz-zYZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s0U-Vf-STC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="s0U-Vf-STC">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="k2G-9j-foM" id="dn8-Aw-JmX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="latitudeTextField" destination="bJM-rB-kaP" id="w0M-2e-edY"/>
+                        <outlet property="longitudeTextField" destination="nZX-W5-LwC" id="gI2-Nw-UOk"/>
+                        <outlet property="nameTextField" destination="Lui-s8-k7e" id="Wsj-BH-36U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSM-tC-RwJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
